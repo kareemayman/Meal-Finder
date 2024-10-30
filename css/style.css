@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    background-color: rgb(39, 23, 65);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container h1:first-child {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.container .flex {
+    display: inline-flex;
+    width: 300px;
+}
+
+.container .flex input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px 0 0 6px;
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+}
+
+.container .flex button {
+    padding: 10px;
+    border-radius: 0 6px 6px 0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.container > button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
