@@ -19,6 +19,10 @@ function fetchMealResults(meal) {
         let newMeal = document.createElement("div")
         newMeal.className = "meal"
         newMeal.innerHTML = `<img src="${m.strMealThumb}" alt="meal">`
+
+        newMeal.dataset.mealName = m.strMeal // Saving Meal Name
+        newMeal.dataset.mealSrc = m.strSource || m.strYouTube // Saving Meal Source
+
         mealGrid.append(newMeal)
       })
     })
