@@ -24,7 +24,7 @@ function fetchMealResults(meal) {
 
         // Saving Name, Src
         newMeal.dataset.mealName = m.strMeal // Saving Meal Name
-        newMeal.dataset.mealSrc = m.strSource || m.strYouTube // Saving Meal Source
+        newMeal.dataset.mealSrc = m.strSource || m.strYoutube // Saving Meal Source
 
         mealGrid.append(newMeal)
       })
@@ -52,5 +52,13 @@ searchInput.addEventListener('keyup', e => {
         mealGrid.innerHTML = ""
         fetchMealResults(searchInput.value)
         searchInput.value = ""
+    }
+})
+
+// Event For Clicking On A Meal
+mealGrid.addEventListener('click', e => {
+    if (e.target.matches('.meal')) {
+        console.log(e.target.dataset.mealSrc)
+        window.open(e.target.dataset.mealSrc, '_blank');
     }
 })
