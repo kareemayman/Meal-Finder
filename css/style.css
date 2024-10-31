@@ -196,3 +196,21 @@ body {
 ::-webkit-search-cancel-button {
     display: none;
 }
+
+@media (width < 769px) {
+    .container {
+        width: 750px;
+    }
+
+    .shuffle-grid-style, .search-grid-style {
+        width: 300px;
+    }
+
+    .container .flex {
+        width: 250px;
+    }
+
+    .directions p {
+        font-size: 14px;
+    }
+}
