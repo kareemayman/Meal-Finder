@@ -16,15 +16,25 @@
 <body>
     <div class="container">
         <h1>Meal Finder</h1>
-        <div class="flex">
-            <input type="text" name="search" id="search" placeholder="Search For Meals Or Keywords">
-            <button class="search-button">
-                <i class="fa-solid fa-magnifying-glass"></i>
+        <buttons>
+            <div class="flex">
+                <input type="search" name="search" id="search" placeholder="Search For Meals Or Keywords">
+                <button class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <button class="shuffle">
+                <i class="fa-solid fa-shuffle"></i>
             </button>
+        </buttons>
+        <h2>Search Results For 'Chicken':</h2>
+        <div class="grid">
+            <div class="meal"></div>
+            <div class="meal"></div>
+            <div class="meal"></div>
+            <div class="meal"></div>
+            <div class="meal"></div>
         </div>
-        <button class="shuffle">
-            <i class="fa-solid fa-shuffle"></i>
-        </button>
     </div>
 </body>
 </html>
