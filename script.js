@@ -39,6 +39,8 @@ function fetchRandomMeal() {
     mealGrid.classList.remove('search-grid-style')
     mealGrid.classList.add('shuffle-grid-style')
 
+    searchResultString.innerHTML = ""
+
     fetch('https://www.themealdb.com/api/json/v1/1/random.php').then(response => {
         return response.json()
     }).then(data => {
