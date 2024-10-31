@@ -6,6 +6,7 @@ const searchResultString = document.querySelector(
 )
 const mealGrid = document.querySelector(".grid")
 
+// Meal API Fetch Function When Using Search
 function fetchMealResults(meal) {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
     .then((respone) => {
@@ -16,10 +17,12 @@ function fetchMealResults(meal) {
       console.log(meals)
 
       meals.forEach((m) => {
+        // Injecting a New Meal Div Inside The Grid
         let newMeal = document.createElement("div")
         newMeal.className = "meal"
         newMeal.innerHTML = `<img src="${m.strMealThumb}" alt="meal">`
 
+        // Saving Name, Src
         newMeal.dataset.mealName = m.strMeal // Saving Meal Name
         newMeal.dataset.mealSrc = m.strSource || m.strYouTube // Saving Meal Source
 
@@ -28,6 +31,7 @@ function fetchMealResults(meal) {
     })
 }
 
+// Search Button Event Listener
 searchButton.addEventListener("click", (e) => {
   if (searchInput.value === "") {
     alert("Please Enter A Search Term")
@@ -37,4 +41,16 @@ searchButton.addEventListener("click", (e) => {
     fetchMealResults(searchInput.value)
     searchInput.value = ""
   }
+})
+
+// Event Listener For Searching With Enter
+searchInput.addEventListener('keyup', e => {
+    if (searchInput.value === "") {
+        alert("Please Enter A Search Term")
+    } else if (e.key === 'Enter'){
+        searchResultString.textContent = `Search Results For '${searchInput.value}':`
+        mealGrid.innerHTML = ""
+        fetchMealResults(searchInput.value)
+        searchInput.value = ""
+    }
 })
